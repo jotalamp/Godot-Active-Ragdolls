@@ -441,6 +441,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="root" type="Node3D" parent="ANIMATED_MODEL"]
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ANIMATED_MODEL/root"]
+visible = false
 bones/0/name = "pelvis"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0.998983, -0.0374975, -0.0250276, 0.0312499, 0.976096, -0.215083, 0.0324944, 0.214082, 0.976275, 0.00424036, 0.820861, 0.288183)
@@ -1092,6 +1093,7 @@ have_debug_meshes = true
 bone_whitelist = "0-16,29-32"
 
 [node name="body001" type="MeshInstance3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
+visible = false
 mesh = SubResource("1")
 skin = SubResource("2")
 
@@ -1113,6 +1115,7 @@ bone_name = "pelvis"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/pelvis"]
 transform = Transform3D(1, -2.23517e-08, 4.65661e-10, -4.65661e-10, -4.47035e-08, -1, -2.23517e-08, 1, -1.19209e-07, -0.0128864, 0.0521965, -0.0160881)
 shape = SubResource("73")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="thigh_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.195641, -0.0192045, 0.980487, 0.673727, -0.723884, -0.14861, 0.712613, 0.689655, -0.128683, 0.106927, 0.797619, 0.290623)
@@ -1123,8 +1126,9 @@ script = ExtResource("2")
 bone_name = "thigh.l"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/thigh_l"]
-transform = Transform3D(1, -7.45058e-09, 2.98023e-08, -5.96046e-08, -2.98023e-08, -1, -1.49012e-08, 1, -6.70552e-08, 1.19209e-07, 0.204809, -7.07805e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0.204809, -7.07805e-08)
 shape = SubResource("54")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="calf_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.0750074, -0.181698, 0.98049, -0.322379, -0.934877, -0.148583, 0.943634, -0.304945, -0.128698, 0.0994495, 0.515789, 0.55913)
@@ -1135,8 +1139,9 @@ script = ExtResource("2")
 bone_name = "calf.l"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/calf_l"]
-transform = Transform3D(1, -7.45058e-09, 0, 0, -7.45058e-08, -1, 0, 1, -5.21541e-08, 9.68575e-06, 0.216883, -2.98023e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.68575e-06, 0.216883, -2.98023e-08)
 shape = SubResource("55")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="foot_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.992137, 0.107529, 0.0640494, -0.0307916, -0.705719, 0.707822, 0.121312, 0.700284, 0.703481, 0.0216948, 0.115738, 0.428618)
@@ -1149,6 +1154,7 @@ bone_name = "foot.l"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/foot_l"]
 transform = Transform3D(1, 3.07336e-08, 2.98023e-08, 4.47035e-08, -0.615799, -0.787903, -6.70552e-08, 0.787903, -0.615799, 9.16421e-07, 0.0634058, -0.00833341)
 shape = SubResource("56")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="ball_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999145, 0.0392386, -0.0130093, -0.00762996, -0.134249, -0.990918, -0.0406287, 0.99017, -0.133835, 0.0354528, 0.0256365, 0.518013)
@@ -1161,6 +1167,7 @@ bone_name = "ball.l"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/ball_l"]
 transform = Transform3D(0.999999, 4.5402e-09, -3.72529e-09, 3.72529e-09, 0.0904756, -0.995899, -6.51926e-09, 0.995898, 0.0904757, -9.55537e-07, 0.0692461, -0.0137339)
 shape = SubResource("74")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="thigh_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.147535, 0.00379142, -0.989044, 0.101376, -0.994778, 0.0113087, -0.983847, -0.101933, -0.147149, -0.0967015, 0.791207, 0.284058)
@@ -1171,8 +1178,9 @@ script = ExtResource("2")
 bone_name = "thigh.r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/thigh_r"]
-transform = Transform3D(1, 7.45058e-08, 0, 1.49012e-08, -3.91155e-08, -1, 0, 1, -5.12227e-08, 5.96046e-08, 0.182117, 5.96046e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96046e-08, 0.182117, 5.96046e-08)
 shape = SubResource("58")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="calf_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.0596489, 0.134994, -0.989049, 0.881373, 0.472285, 0.0113064, 0.468639, -0.871047, -0.147151, -0.0952237, 0.403885, 0.244371)
@@ -1183,8 +1191,9 @@ script = ExtResource("2")
 bone_name = "calf.r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/calf_r"]
-transform = Transform3D(1, -2.23517e-08, -2.98023e-08, 2.98023e-08, -2.98023e-08, -1, 1.49012e-08, 1, -4.47035e-08, 9.83477e-07, 0.232324, -1.2666e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83477e-07, 0.232324, -1.2666e-07)
 shape = SubResource("59")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="foot_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.984017, -0.130422, -0.121243, 0.121194, 0.00833814, -0.992594, 0.130467, -0.991424, 0.00760155, -0.0374611, 0.60597, -0.128343)
@@ -1197,6 +1206,7 @@ bone_name = "foot.r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/foot_r"]
 transform = Transform3D(1, 4.47035e-08, -9.68575e-08, -4.47035e-08, -0.642734, -0.766091, -9.72068e-08, 0.76609, -0.642735, -3.40492e-06, 0.0723035, -0.0385014)
 shape = SubResource("60")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="ball_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.994703, -0.0930993, 0.0435678, -0.0911606, -0.603178, 0.79238, -0.0474909, -0.792155, -0.60847, -0.0542163, 0.607071, -0.254904)
@@ -1209,6 +1219,7 @@ bone_name = "ball.r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/ball_r"]
 transform = Transform3D(1, 0, 5.21541e-08, 1.49012e-08, 0.0826857, -0.996576, 5.58794e-09, 0.996576, 0.0826859, 1.27405e-06, 0.0598594, -0.0163248)
 shape = SubResource("75")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="spine_01" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999593, 0.00521549, -0.0280636, -0.011946, 0.969361, -0.245351, 0.0259242, 0.245586, 0.969028, -0.000273946, 0.938372, 0.313956)
@@ -1221,6 +1232,7 @@ bone_name = "spine_01"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/spine_01"]
 transform = Transform3D(1, -1.86265e-09, -9.31323e-10, 1.86265e-09, -4.47035e-08, -1, 0, 1, -1.49012e-08, 3.72529e-09, 0.085743, 4.47035e-08)
 shape = SubResource("76")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="spine_02" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999969, 0.00612253, 0.00484624, -0.00223399, 0.819013, -0.573769, -0.00748205, 0.573741, 0.819, 0.000691567, 1.11782, 0.359418)
@@ -1233,6 +1245,7 @@ bone_name = "spine_02"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/spine_02"]
 transform = Transform3D(1, -1.86265e-09, 4.65661e-10, 3.72529e-09, -2.68221e-07, -1, 4.65661e-10, 1, -8.9407e-08, 1.25729e-08, 0.124732, -2.98023e-08)
 shape = SubResource("77")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="neck_01" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999851, 0.00758561, 0.0153034, 0.00937504, 0.505201, -0.862949, -0.0142773, 0.862967, 0.505055, 0.00219776, 1.3193, 0.500561)
@@ -1245,6 +1258,7 @@ bone_name = "neck_01"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/neck_01"]
 transform = Transform3D(1, -8.3819e-09, 3.72529e-09, 4.65661e-09, -4.47035e-07, -1, -7.45058e-09, 1, -2.68221e-07, 4.65661e-10, 0.0391921, 0)
 shape = SubResource("64")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="head" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999543, 0.00442179, -0.0299232, -0.0127584, 0.958585, -0.284521, 0.0274258, 0.284774, 0.958204, 0.00282728, 1.36123, 0.57218)
@@ -1257,6 +1271,7 @@ bone_name = "head"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/head"]
 transform = Transform3D(1, -1.86265e-09, 4.65661e-10, -4.65661e-10, 0.0447352, -0.998999, -9.31323e-09, 0.998998, 0.0447353, 1.49012e-08, 0.0799968, 0.00772658)
 shape = SubResource("65")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="clavicle_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.306673, -0.949473, -0.0667137, -0.706336, 0.274002, -0.652695, 0.637996, -0.153041, -0.754677, -0.0416859, 1.25152, 0.484163)
@@ -1268,6 +1283,7 @@ bone_name = "clavicle.r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/clavicle_r"]
 transform = Transform3D(1, 0, -8.19564e-08, -5.96046e-08, -3.72529e-08, -1, -2.98023e-08, 1, -2.98023e-08, 5.96046e-08, 0.0702385, 2.38419e-07)
 shape = SubResource("66")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="upperarm_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.825055, -0.137244, -0.548131, 0.454311, -0.737922, -0.49907, -0.335984, -0.660783, 0.671179, -0.170291, 1.28863, 0.463434)
@@ -1278,8 +1294,9 @@ script = ExtResource("2")
 bone_name = "upperarm.r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/upperarm_r"]
-transform = Transform3D(1, -2.98023e-08, -1.49012e-08, 0, -8.9407e-08, -1, -4.47035e-08, 1, -2.98023e-08, -5.96046e-08, 0.117073, 5.96046e-08)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.117073, 5.96046e-08)
 shape = SubResource("67")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="lowerarm_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.784346, -0.0918894, -0.613481, 0.231134, -0.961045, -0.15156, -0.575656, -0.260671, 0.77503, -0.206247, 1.09531, 0.29032)
@@ -1290,8 +1307,9 @@ script = ExtResource("2")
 bone_name = "lowerarm.r"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/lowerarm_r"]
-transform = Transform3D(0.999999, -3.8743e-07, 0, -4.47035e-08, 4.47035e-08, -0.999999, -1.19209e-07, 1, 2.98023e-08, 1.49012e-08, 0.110763, 4.47035e-08)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 1.49012e-08, 0.110763, 4.47035e-08)
 shape = SubResource("68")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="hand_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.237247, -0.0825523, -0.967934, 0.147617, -0.987883, 0.0480756, -0.96017, -0.131423, 0.246556, -0.225293, 0.896104, 0.236289)
@@ -1304,6 +1322,7 @@ bone_name = "hand.r"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/hand_r"]
 transform = Transform3D(1, 4.47035e-08, 0, -8.9407e-08, -2.6077e-08, -1, 0, 1, -4.84288e-08, -0.00869548, 0.0636514, -4.47035e-07)
 shape = SubResource("78")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="clavicle_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.312847, 0.948344, 0.0526228, 0.707905, 0.26975, -0.652767, -0.633242, -0.166964, -0.755729, 0.0455161, 1.25132, 0.483512)
@@ -1315,6 +1334,7 @@ bone_name = "clavicle.l"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/clavicle_l"]
 transform = Transform3D(1, -2.98023e-08, 4.47035e-08, -1.49012e-08, -1.49012e-08, -1, 2.98023e-08, 1, -7.45058e-08, 1.78814e-07, 0.0706944, 1.19209e-07)
 shape = SubResource("70")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="upperarm_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.792713, 0.146961, 0.591615, -0.068404, -0.98582, 0.153228, 0.605745, 0.0809951, 0.791526, 0.173968, 1.28786, 0.460896)
@@ -1325,8 +1345,9 @@ script = ExtResource("2")
 bone_name = "upperarm.l"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/upperarm_l"]
-transform = Transform3D(1, -1.78814e-07, 7.45058e-09, 1.11759e-08, -2.98023e-08, -1, 2.98023e-08, 1, -5.96046e-08, 2.68221e-07, 0.126839, 1.19209e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68221e-07, 0.126839, 1.19209e-07)
 shape = SubResource("71")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="lowerarm_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.769473, 0.143678, 0.622308, 0.594655, -0.194316, 0.780145, 0.233015, 0.97036, 0.0640821, 0.212469, 1.02959, 0.482115)
@@ -1337,8 +1358,9 @@ script = ExtResource("2")
 bone_name = "lowerarm.l"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/lowerarm_l"]
-transform = Transform3D(1, -2.41213e-07, -1.49012e-08, -4.47035e-08, 2.98023e-08, -1, 1.03377e-07, 0.999999, -7.82311e-08, 0, 0.106711, -3.57628e-07)
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0.106711, -3.57628e-07)
 shape = SubResource("72")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="hand_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.322173, 0.0994732, 0.941444, 0.919759, -0.202578, 0.33616, 0.224158, 0.974196, -0.0262311, 0.242255, 0.989307, 0.683282)
@@ -1351,6 +1373,7 @@ bone_name = "hand.l"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="EXAMPLE_MODEL/root/Skeleton3D/hand_l"]
 transform = Transform3D(1, 7.45058e-08, 1.19209e-07, -4.47035e-08, -2.42144e-08, -1, 9.31323e-09, 1, -5.40167e-08, 0.00335252, 0.060169, -1.78814e-07)
 shape = SubResource("79")
+debug_color = Color(1, 0, 0, 1)
 
 [node name="JOINT_pelvis_thigh_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.195641, -0.0192035, 0.980492, 0.673725, -0.723843, -0.148612, 0.712611, 0.689615, -0.128683, 0.106927, 0.797619, 0.290623)
