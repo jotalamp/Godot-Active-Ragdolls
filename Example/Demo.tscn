@@ -1113,7 +1113,7 @@ transform = Transform3D(1, -2.23517e-08, 4.65661e-10, -4.65661e-10, -4.47035e-08
 shape = SubResource("73")
 
 [node name="thigh_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(0.195641, -0.0192035, 0.980492, 0.673725, -0.723843, -0.148612, 0.712611, 0.689615, -0.128683, 0.106927, 0.797619, 0.290623)
+transform = Transform3D(0.195641, -0.0192045, 0.980487, 0.673727, -0.723884, -0.14861, 0.712613, 0.689655, -0.128683, 0.106927, 0.797619, 0.290623)
 collision_layer = 2
 collision_mask = 11
 mass = 1.02041
@@ -1125,7 +1125,7 @@ transform = Transform3D(1, -7.45058e-09, 2.98023e-08, -5.96046e-08, -2.98023e-08
 shape = SubResource("54")
 
 [node name="calf_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(0.0750088, -0.181694, 0.980494, -0.322385, -0.934826, -0.148584, 0.943651, -0.304975, -0.128699, 0.0994495, 0.515789, 0.55913)
+transform = Transform3D(0.0750074, -0.181698, 0.98049, -0.322379, -0.934877, -0.148583, 0.943634, -0.304945, -0.128698, 0.0994495, 0.515789, 0.55913)
 collision_layer = 8
 collision_mask = 11
 mass = 0.484694
@@ -1137,7 +1137,7 @@ transform = Transform3D(1, -7.45058e-09, 0, 0, -7.45058e-08, -1, 0, 1, -5.21541e
 shape = SubResource("55")
 
 [node name="foot_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(-0.992095, 0.10754, 0.0640495, -0.0307903, -0.705709, 0.707834, 0.121307, 0.700273, 0.703592, 0.0216948, 0.115738, 0.428618)
+transform = Transform3D(-0.992137, 0.107529, 0.0640494, -0.0307916, -0.705719, 0.707822, 0.121312, 0.700284, 0.703481, 0.0216948, 0.115738, 0.428618)
 collision_layer = 8
 collision_mask = 11
 mass = 0.145918
@@ -1149,7 +1149,7 @@ transform = Transform3D(1, 3.07336e-08, 2.98023e-08, 4.47035e-08, -0.615799, -0.
 shape = SubResource("56")
 
 [node name="ball_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(0.999104, 0.0392585, -0.0130022, -0.00762964, -0.134261, -0.990882, -0.0406271, 0.990257, -0.133948, 0.0354528, 0.0256365, 0.518013)
+transform = Transform3D(0.999145, 0.0392386, -0.0130093, -0.00762996, -0.134249, -0.990918, -0.0406287, 0.99017, -0.133835, 0.0354528, 0.0256365, 0.518013)
 collision_layer = 8
 collision_mask = 11
 mass = 0.0510204
@@ -1173,7 +1173,7 @@ transform = Transform3D(1, 7.45058e-08, 0, 1.49012e-08, -3.91155e-08, -1, 0, 1, 
 shape = SubResource("58")
 
 [node name="calf_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(-0.0596486, 0.134978, -0.989044, 0.881369, 0.472225, 0.0113065, 0.468637, -0.870945, -0.147151, -0.0952237, 0.403885, 0.244371)
+transform = Transform3D(-0.0596489, 0.134994, -0.989049, 0.881373, 0.472285, 0.0113064, 0.468639, -0.871047, -0.147151, -0.0952237, 0.403885, 0.244371)
 collision_layer = 8
 collision_mask = 11
 mass = 0.484694
@@ -1185,7 +1185,7 @@ transform = Transform3D(1, -2.23517e-08, -2.98023e-08, 2.98023e-08, -2.98023e-08
 shape = SubResource("59")
 
 [node name="foot_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(-0.983965, -0.130458, -0.121233, 0.121188, 0.00834256, -0.992586, 0.13046, -0.991422, 0.00750148, -0.0374611, 0.60597, -0.128343)
+transform = Transform3D(-0.984017, -0.130422, -0.121243, 0.121194, 0.00833814, -0.992594, 0.130467, -0.991424, 0.00760155, -0.0374611, 0.60597, -0.128343)
 collision_layer = 8
 collision_mask = 11
 mass = 0.145918
@@ -1197,7 +1197,7 @@ transform = Transform3D(1, 4.47035e-08, -9.68575e-08, -4.47035e-08, -0.642734, -
 shape = SubResource("60")
 
 [node name="ball_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(0.99466, -0.0931393, 0.0435277, -0.0911566, -0.603233, 0.792314, -0.0474888, -0.792229, -0.608392, -0.0542163, 0.607071, -0.254904)
+transform = Transform3D(0.994703, -0.0930993, 0.0435678, -0.0911606, -0.603178, 0.79238, -0.0474909, -0.792155, -0.60847, -0.0542163, 0.607071, -0.254904)
 collision_layer = 8
 collision_mask = 11
 mass = 0.0510204
@@ -1280,7 +1280,7 @@ transform = Transform3D(1, -2.98023e-08, -1.49012e-08, 0, -8.9407e-08, -1, -4.47
 shape = SubResource("67")
 
 [node name="lowerarm_r" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(-0.784346, -0.0918697, -0.613481, 0.231134, -0.960842, -0.15156, -0.575656, -0.260616, 0.77503, -0.206247, 1.09531, 0.29032)
+transform = Transform3D(-0.784346, -0.0918894, -0.613481, 0.231134, -0.961045, -0.15156, -0.575656, -0.260671, 0.77503, -0.206247, 1.09531, 0.29032)
 collision_layer = 8
 collision_mask = 9
 mass = 0.190816
@@ -1327,7 +1327,7 @@ transform = Transform3D(1, -1.78814e-07, 7.45058e-09, 1.11759e-08, -2.98023e-08,
 shape = SubResource("71")
 
 [node name="lowerarm_l" type="RigidBody3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
-transform = Transform3D(-0.769474, 0.14367, 0.622309, 0.594656, -0.194306, 0.780143, 0.233015, 0.970316, 0.0640827, 0.212469, 1.02959, 0.482115)
+transform = Transform3D(-0.769473, 0.143678, 0.622308, 0.594655, -0.194316, 0.780145, 0.233015, 0.97036, 0.0640821, 0.212469, 1.02959, 0.482115)
 collision_layer = 8
 collision_mask = 9
 mass = 0.190816
