@@ -111,6 +111,8 @@ func _add_joint_for( bone_id : int ):
 			
 			## For enabling and disabling animation tracing
 			self.connect("trace_animation_skeleton", Callable(JOINT, "trace_skeleton"))
+	else:
+		set_deferred("freeze", true)
 
 """
 CREATION OF MESHES THAT ARE THE VISUAL REPRESENTATION OF BONES FOR DEBUG

@@ -1088,6 +1088,7 @@ bones/44/position = Vector3(-2.47302e-08, 0.0307385, 1.49841e-07)
 bones/44/rotation = Quaternion(-0.575832, -0.00736415, 0.027519, 0.817071)
 bones/44/scale = Vector3(0.999999, 1, 0.999997)
 script = ExtResource("1")
+have_debug_meshes = true
 bone_whitelist = "0-16,29-32"
 
 [node name="body001" type="MeshInstance3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
@@ -1105,6 +1106,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 mass = 1.39388
+freeze = true
 script = ExtResource("2")
 bone_name = "pelvis"
 
@@ -1352,6 +1354,8 @@ shape = SubResource("79")
 
 [node name="JOINT_pelvis_thigh_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.195641, -0.0192035, 0.980492, 0.673725, -0.723843, -0.148612, 0.712611, 0.689615, -0.128683, 0.106927, 0.797619, 0.290623)
+node_a = NodePath("../pelvis")
+node_b = NodePath("../thigh_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 0
@@ -1360,6 +1364,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_thigh_l_calf_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.0750088, -0.181694, 0.980494, -0.322385, -0.934826, -0.148584, 0.943651, -0.304975, -0.128699, 0.0994495, 0.515789, 0.55913)
+node_a = NodePath("../thigh_l")
+node_b = NodePath("../calf_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 1
@@ -1368,6 +1374,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_calf_l_foot_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.992095, 0.10754, 0.0640495, -0.0307903, -0.705709, 0.707834, 0.121307, 0.700273, 0.703592, 0.0216948, 0.115738, 0.428618)
+node_a = NodePath("../calf_l")
+node_b = NodePath("../foot_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 2
@@ -1376,6 +1384,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_foot_l_ball_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999104, 0.0392585, -0.0130022, -0.00762964, -0.134261, -0.990882, -0.0406271, 0.990257, -0.133948, 0.0354528, 0.0256365, 0.518013)
+node_a = NodePath("../foot_l")
+node_b = NodePath("../ball_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 3
@@ -1384,6 +1394,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_pelvis_thigh_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.147535, 0.00379142, -0.989044, 0.101376, -0.994778, 0.0113087, -0.983847, -0.101933, -0.147149, -0.0967015, 0.791207, 0.284058)
+node_a = NodePath("../pelvis")
+node_b = NodePath("../thigh_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 0
@@ -1392,6 +1404,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_thigh_r_calf_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.0596486, 0.134978, -0.989044, 0.881369, 0.472225, 0.0113065, 0.468637, -0.870945, -0.147151, -0.0952237, 0.403885, 0.244371)
+node_a = NodePath("../thigh_r")
+node_b = NodePath("../calf_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 5
@@ -1400,6 +1414,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_calf_r_foot_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.983965, -0.130458, -0.121233, 0.121188, 0.00834256, -0.992586, 0.13046, -0.991422, 0.00750148, -0.0374611, 0.60597, -0.128343)
+node_a = NodePath("../calf_r")
+node_b = NodePath("../foot_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 6
@@ -1408,6 +1424,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_foot_r_ball_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.99466, -0.0931393, 0.0435277, -0.0911566, -0.603233, 0.792314, -0.0474888, -0.792229, -0.608392, -0.0542163, 0.607071, -0.254904)
+node_a = NodePath("../foot_r")
+node_b = NodePath("../ball_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 7
@@ -1416,9 +1434,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_pelvis_spine_01" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999593, 0.00521549, -0.0280636, -0.011946, 0.969361, -0.245351, 0.0259242, 0.245586, 0.969028, -0.000273946, 0.938372, 0.313956)
-angular_limit_x/damping = 10.0
-angular_limit_y/damping = 10.0
-angular_limit_z/damping = 10.0
+node_a = NodePath("../pelvis")
+node_b = NodePath("../spine_01")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 0
@@ -1427,6 +1444,8 @@ matching_velocity_multiplier = 12.5
 
 [node name="JOINT_spine_01_spine_02" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999969, 0.00612253, 0.00484624, -0.00223399, 0.819013, -0.573769, -0.00748205, 0.573741, 0.819, 0.000691567, 1.11782, 0.359418)
+node_a = NodePath("../spine_01")
+node_b = NodePath("../spine_02")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 9
@@ -1435,6 +1454,8 @@ matching_velocity_multiplier = 12.0
 
 [node name="JOINT_spine_02_neck_01" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999851, 0.00758561, 0.0153034, 0.00937504, 0.505201, -0.862949, -0.0142773, 0.862967, 0.505055, 0.00219776, 1.3193, 0.500561)
+node_a = NodePath("../spine_02")
+node_b = NodePath("../neck_01")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 10
@@ -1443,6 +1464,8 @@ matching_velocity_multiplier = 10.0
 
 [node name="JOINT_neck_01_head" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(0.999543, 0.00442179, -0.0299232, -0.0127584, 0.958585, -0.284521, 0.0274258, 0.284774, 0.958204, 0.00282728, 1.36123, 0.57218)
+node_a = NodePath("../neck_01")
+node_b = NodePath("../head")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 11
@@ -1451,6 +1474,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_spine_02_clavicle_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.306673, -0.949473, -0.0667137, -0.706336, 0.274002, -0.652695, 0.637996, -0.153041, -0.754677, -0.0416859, 1.25152, 0.484163)
+node_a = NodePath("../spine_02")
+node_b = NodePath("../clavicle_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 10
@@ -1459,6 +1484,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_clavicle_r_upperarm_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.825055, -0.137244, -0.548131, 0.454311, -0.737922, -0.49907, -0.335984, -0.660783, 0.671179, -0.170291, 1.28863, 0.463434)
+node_a = NodePath("../clavicle_r")
+node_b = NodePath("../upperarm_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 13
@@ -1467,6 +1494,8 @@ matching_velocity_multiplier = 6.0
 
 [node name="JOINT_upperarm_r_lowerarm_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.784346, -0.0918697, -0.613481, 0.231134, -0.960842, -0.15156, -0.575656, -0.260616, 0.77503, -0.206247, 1.09531, 0.29032)
+node_a = NodePath("../upperarm_r")
+node_b = NodePath("../lowerarm_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 14
@@ -1475,6 +1504,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_lowerarm_r_hand_r" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.237247, -0.0825523, -0.967934, 0.147617, -0.987883, 0.0480756, -0.96017, -0.131423, 0.246556, -0.225293, 0.896104, 0.236289)
+node_a = NodePath("../lowerarm_r")
+node_b = NodePath("../hand_r")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 15
@@ -1483,6 +1514,8 @@ matching_velocity_multiplier = 2.0
 
 [node name="JOINT_spine_02_clavicle_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.312847, 0.948344, 0.0526228, 0.707905, 0.26975, -0.652767, -0.633242, -0.166964, -0.755729, 0.0455161, 1.25132, 0.483512)
+node_a = NodePath("../spine_02")
+node_b = NodePath("../clavicle_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 10
@@ -1491,6 +1524,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_clavicle_l_upperarm_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.792713, 0.146961, 0.591615, -0.068404, -0.98582, 0.153228, 0.605745, 0.0809951, 0.791526, 0.173968, 1.28786, 0.460896)
+node_a = NodePath("../clavicle_l")
+node_b = NodePath("../upperarm_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 29
@@ -1499,6 +1534,8 @@ matching_velocity_multiplier = 6.0
 
 [node name="JOINT_upperarm_l_lowerarm_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.769474, 0.14367, 0.622309, 0.594656, -0.194306, 0.780143, 0.233015, 0.970316, 0.0640827, 0.212469, 1.02959, 0.482115)
+node_a = NodePath("../upperarm_l")
+node_b = NodePath("../lowerarm_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 30
@@ -1507,6 +1544,8 @@ matching_velocity_multiplier = 5.0
 
 [node name="JOINT_lowerarm_l_hand_l" type="Generic6DOFJoint3D" parent="EXAMPLE_MODEL/root/Skeleton3D"]
 transform = Transform3D(-0.322173, 0.0994732, 0.941444, 0.919759, -0.202578, 0.33616, 0.224158, 0.974196, -0.0262311, 0.242255, 0.989307, 0.683282)
+node_a = NodePath("../lowerarm_l")
+node_b = NodePath("../hand_l")
 script = ExtResource("6")
 animation_skeleton = NodePath("../../../../ANIMATED_MODEL/root/Skeleton3D")
 BONE_A_INDEX = 31

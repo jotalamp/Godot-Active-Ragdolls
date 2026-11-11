@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.4")
 
 [physics]
 
+3d/physics_engine="Jolt Physics"
 common/enable_pause_aware_picking=true
 
 [rendering]
