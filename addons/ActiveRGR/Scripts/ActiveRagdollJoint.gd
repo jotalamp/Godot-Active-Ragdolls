@@ -34,12 +34,12 @@ func _ready() -> void:
 		""" BLINDLY FOLLOWING THE THE CODE FROM THIS UNITY EXTENSION
 		 		https://gist.github.com/mstevenson/7b85893e8caf5ca034e6 """
 		## CAN CAUSE SPORRADIC MOVEMENT ON RUNTIME
-		#self.set_param_x(Generic6DOFJoint.PARAM_ANGULAR_FORCE_LIMIT, 9999999)
-		#self.set_param_y(Generic6DOFJoint.PARAM_ANGULAR_FORCE_LIMIT, 9999999)
-		#self.set_param_z(Generic6DOFJoint.PARAM_ANGULAR_FORCE_LIMIT, 9999999)
-		self.set_param_x(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 9999999)
-		self.set_param_y(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 9999999)
-		self.set_param_z(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 9999999)
+		self.set_param_x(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
+		self.set_param_y(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
+		self.set_param_z(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
+		self.set_param_x(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
+		self.set_param_y(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
+		self.set_param_z(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_FORCE_LIMIT, 99999999)
 
 		assert(self.get_parent() is Skeleton3D, "The Ragdoll Bone[%s] is supposed to be a child of a Skeleton3D" % [self.name])
 
@@ -75,6 +75,10 @@ func _physics_process(delta: float) -> void:
 		var target_rotation : Basis = TARGET_SKELETON.get_bone_global_pose(BONE_B_INDEX).basis.inverse() * self.get_parent().get_bone_global_pose(BONE_B_INDEX).basis
 		var target_velocity : Vector3 = target_rotation.get_euler() * matching_velocity_multiplier
 
+		#self.set_param_x(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.x)
+		#self.set_param_y(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.y)
+		#self.set_param_z(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.z)
+		
 		self.set_param_x(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.x)
 		self.set_param_y(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.y)
 		self.set_param_z(Generic6DOFJoint3D.PARAM_ANGULAR_MOTOR_TARGET_VELOCITY, target_velocity.z)

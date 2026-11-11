@@ -25,11 +25,14 @@ func _ready() -> void:
 		BONE_INDEX = get_parent().find_bone(bone_name)
 		assert(BONE_INDEX >= 0, "The Ragdoll Bone's[%s] bone name[%s] does not match any bone in the skeleton" % [self.name, bone_name])
 
-
 """
 	APPLY OWN ROTATION TO THE RESPECTIVE BONE IN PARENT SKELETON
 """
 func _physics_process(_delta: float) -> void:
-	var bone_global_rotation : Basis = get_parent().global_transform.basis * get_parent().get_bone_global_pose(BONE_INDEX).basis
+	var bone_global_rotation : Basis = get_parent().get_bone_global_pose(BONE_INDEX).basis
 	var b2t_rotation : Basis = bone_global_rotation.inverse() * self.transform.basis
-	get_parent().set_bone_pose(BONE_INDEX, Transform3D(get_parent().get_bone_pose(BONE_INDEX).basis * b2t_rotation))
+	
+	var transform2 = Transform3D(get_parent().get_bone_pose(BONE_INDEX).basis * b2t_rotation)
+	transform2.origin = get_parent().get_bone_pose(BONE_INDEX).origin
+
+	get_parent().set_bone_pose(BONE_INDEX, transform2)
