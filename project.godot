@@ -16,6 +16,8 @@ config/features=PackedStringArray("4.4")
 
 [physics]
 
+common/physics_ticks_per_second=1000
+common/max_physics_steps_per_frame=100
 3d/physics_engine="Jolt Physics"
 common/enable_pause_aware_picking=true
 
