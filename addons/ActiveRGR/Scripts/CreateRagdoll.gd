@@ -1,5 +1,5 @@
-tool
-extends Skeleton
+@tool
+extends Skeleton3D
 
 """
 	Active Ragdolls - Ragdoll Creator
@@ -7,7 +7,7 @@ extends Skeleton
 			@R3X-G1L       (godot assets store)
 			R3X-G1L6AME5H  (github)
 
-	This is the script that reads through all the bones on a Skeleton and creates
+	This is the script that reads through all the bones on a Skeleton3D and creates
 	RigidBodies in their exact positions, with their exact rotations. This does
 	not scale the bones. That part is left to the user.
 """
@@ -16,13 +16,13 @@ const RAGDOLL_BONE = preload("RagdollBone.gd")
 const ACTIVE_RAGDOLL_JOINT = preload("ActiveRagdollJoint.gd")
 
 ### Setting up the buttons
-export (bool) var create_ragdoll = false setget _set_create_ragdoll
-export (bool) var create_joints = false setget _set_create_joints
-export (bool) var have_debug_meshes = false setget _set_have_debug_meshes
+@export var create_ragdoll: bool = false: set = _set_create_ragdoll
+@export var create_joints: bool = false: set = _set_create_joints
+@export var have_debug_meshes: bool = false: set = _set_have_debug_meshes
 
 ## The white list
-export (String) var bone_whitelist = ""
-var _whitelist := PoolIntArray([])
+@export var bone_whitelist: String = ""
+var _whitelist := PackedInt32Array([])
 
 signal trace_animation_skeleton(value)
 
@@ -54,8 +54,8 @@ func _add_ragdoll_bone( bone_id : int ):
 	BONE.transform = self.get_bone_global_pose(bone_id)
 
 	## Create the collisions for the rigid bodies
-	var collision := CollisionShape.new()
-	collision.shape = CapsuleShape.new()
+	var collision := CollisionShape3D.new()
+	collision.shape = CapsuleShape3D.new()
 	collision.shape.radius = .1
 	collision.shape.height = .1
 	collision.rotate_x(PI/2)
@@ -110,7 +110,7 @@ func _add_joint_for( bone_id : int ):
 			JOINT.set("nodes/node_b", JOINT.get_path_to(node_b) )
 			
 			## For enabling and disabling animation tracing
-			self.connect("trace_animation_skeleton", JOINT, "trace_skeleton")
+			self.connect("trace_animation_skeleton", Callable(JOINT, "trace_skeleton"))
 
 """
 CREATION OF MESHES THAT ARE THE VISUAL REPRESENTATION OF BONES FOR DEBUG
@@ -122,32 +122,32 @@ func _set_have_debug_meshes( value ):
 		for bone_id in range(self.get_bone_count()):
 			var ragdoll_bone = get_node_or_null(get_clean_bone_name(bone_id))
 			if ragdoll_bone: ## DOES BONE EXIST
-				var collision = ragdoll_bone.get_node("CollisionShape")
+				var collision = ragdoll_bone.get_node("CollisionShape3D")
 				if collision: ## DOES IT HAVE A COLLISION
 					if not collision.has_node("DEBUG_MESH"):
 						## FIGURE OUT WHICH MESH SHOULD MASK THE COLLISION SHAPE
-						if collision.shape is BoxShape: 
-							var box = MeshInstance.new()
+						if collision.shape is BoxShape3D: 
+							var box = MeshInstance3D.new()
 							box.name = "DEBUG_MESH"   ## THIS NAME IS IMPORTANT IDENTIFIER FOR LATER DELETION
-							box.mesh = CubeMesh.new()
+							box.mesh = BoxMesh.new()
 							box.mesh.size.x = collision.shape.extents.x * 2
 							box.mesh.size.y = collision.shape.extents.y * 2
 							box.mesh.size.z = collision.shape.extents.z * 2 
 							collision.add_child(box)
 							box.set_owner(owner)
-						elif collision.shape is CapsuleShape:
-							var capsule := MeshInstance.new()
+						elif collision.shape is CapsuleShape3D:
+							var capsule := MeshInstance3D.new()
 							capsule.name = "DEBUG_MESH"  ## THIS NAME IS IMPORTANT IDENTIFIER FOR LATER DELETION
 							capsule.mesh = CapsuleMesh.new()
 							capsule.mesh.radius = collision.shape.radius
-							capsule.mesh.mid_height = collision.shape.height
+							capsule.mesh.height = collision.shape.height
 							collision.add_child(capsule)
 							capsule.set_owner(owner)
 	else:
 		for bone_id in range(self.get_bone_count()):
 			var ragdoll_bone = get_node_or_null(get_clean_bone_name(bone_id))
 			if ragdoll_bone:  ## DOES BONE EXIST
-				var collision = ragdoll_bone.get_node("CollisionShape")
+				var collision = ragdoll_bone.get_node("CollisionShape3D")
 				if collision:   ## DOES COLLISON EXIST
 					if collision.has_node("DEBUG_MESH"):
 						collision.get_node("DEBUG_MESH").queue_free()
