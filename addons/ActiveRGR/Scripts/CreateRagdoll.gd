@@ -26,6 +26,7 @@ var _whitelist := PackedInt32Array([])
 
 signal trace_animation_skeleton(value)
 
+@export var angularMotorForceLimit: float = 70.0
 
 """
 	GOES THROUGH THE LIST OF BONES AND CREATES THE RIGIDBODIES
